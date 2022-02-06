@@ -3,7 +3,24 @@
         <p>{{ showNotification.message }}</p>
     </div>
 
-    <h2>Bienvenido!</h2>
+    <div class="dashboard-header">
+        <h2>Bienvenido!</h2>
+        <button mat-icon-button (click)="refreshRows()">
+            <mat-icon>refresh</mat-icon>
+        </button>
+    </div>
+
+    <div *ngIf="loadingInformation" class="loading-info">
+        <mat-spinner diameter="50"></mat-spinner>
+        <p>Leyendo información de google sheets... Por favor espere.</p>
+    </div>
+
+    <mat-card *ngIf="sheetRows.length > 0">
+        <p class="information">Se encontraron {{ sheetRows.length }} registros en Google sheets.</p>
+    </mat-card>
+    <mat-card *ngIf="showError">
+        <p class="information">Hubo un problema de conexión con el servidor, intente nuevamente más tarde.</p>
+    </mat-card>
 
     <div class="add">
         <a [routerLink]="[ '/home/tracing' ]" mat-fab class="add-btn" color="primary">

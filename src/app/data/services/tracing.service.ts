@@ -9,11 +9,12 @@ import { environment } from '../../../environments/environment';
 })
 export class TracingService {
 
+  private baseUrl: string = environment.baseUrl;
+
   private notificationSettings: NotificationSettings = {
     show: false,
     message: "Default Message"
   }
-  private baseUrl: string = environment.baseUrl;
   private notificationSource = new BehaviorSubject(this.notificationSettings);
   notificationStatus = this.notificationSource.asObservable();
 
@@ -25,5 +26,9 @@ export class TracingService {
 
   postResponse(form: TechoForm): Observable<any> {
     return this.http.post(`${this.baseUrl}/api/sheet`, form);
+  }
+
+  getEntries(): Observable<any> {
+    return this.http.get(`${this.baseUrl}/api/sheet`);
   }
 }

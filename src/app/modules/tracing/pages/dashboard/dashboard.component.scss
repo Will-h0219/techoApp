@@ -20,6 +20,33 @@
             font-weight: 500;
         }
     }
+
+    .dashboard-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 12px;
+        h2 {
+            margin: 0px;
+            align-self: center;
+        }
+    }
+
+    .loading-info {
+        display: flex;
+        align-items: center;
+        justify-content: left;
+        gap: 16px;
+        p {
+            width: 75%;
+            margin: 0px;
+            font-weight: 500;
+        }
+    }
+
+    .information {
+        font-weight: 500;
+    }
     
     .add {
         width: 100%;
