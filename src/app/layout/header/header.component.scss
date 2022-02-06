@@ -1,0 +1,25 @@
+.sidenav-container {
+    min-height: 100%;
+    position: relative;
+    margin-bottom: -56px;
+    padding-bottom: 56px;
+    .menu-sidenav {
+        min-width: 220px;
+        .logo-container {
+            display: flex;
+            align-items: center;
+            .logo {
+                max-width: 120px;
+                height: auto;
+            }
+        }
+    }
+    .header-toolbar {
+        display: flex;
+        justify-content: space-between;
+    }
+    .path {
+        text-decoration: none;
+        font-weight: 500;
+    }
+}

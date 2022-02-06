@@ -1,0 +1,31 @@
+<mat-sidenav-container class="sidenav-container">
+    <mat-sidenav #sidenav mode="over" class="menu-sidenav">
+        <mat-toolbar color="primary">
+            <a class="logo-container" [routerLink]="[ '/home/dashboard' ]" (click)="sidenav.toggle()">
+                <img class="logo" src="../../../assets/images/logo.png" alt="techo-logo">
+            </a>
+        </mat-toolbar>
+
+        <mat-selection-list>
+            <mat-list-item *ngFor="let route of routes">
+                <a [routerLink]="[ route.path ]"
+                    (click)="sidenav.toggle()"
+                    class="path">
+                    {{ route.name }}
+                </a>
+            </mat-list-item>
+        </mat-selection-list>
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+        <mat-toolbar class="header-toolbar" color="primary">
+            <button mat-icon-button (click)="sidenav.toggle()">
+                <mat-icon>menu</mat-icon>
+            </button>
+        </mat-toolbar>
+
+        <router-outlet></router-outlet>
+
+        <app-footer></app-footer>
+    </mat-sidenav-content>
+</mat-sidenav-container>

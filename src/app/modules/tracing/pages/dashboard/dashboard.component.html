@@ -1,0 +1,13 @@
+<div class="container">
+    <div *ngIf="showNotification.show" class="notification">
+        <p>{{ showNotification.message }}</p>
+    </div>
+
+    <h2>Bienvenido!</h2>
+
+    <div class="add">
+        <a [routerLink]="[ '/home/tracing' ]" mat-fab class="add-btn" color="primary">
+            <mat-icon>add</mat-icon>
+        </a>
+    </div>
+</div>

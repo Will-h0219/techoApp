@@ -1,0 +1,15 @@
+@import '../../../styles/medias.scss';
+
+.footer-container {
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    @include md-screen() {
+        display: none;
+    }
+    .footer {
+        width: 100vw;
+        display: flex;
+        justify-content: center;
+    }
+}

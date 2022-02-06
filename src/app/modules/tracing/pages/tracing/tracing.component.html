@@ -1,0 +1,37 @@
+<div class="container">
+    <p>Por favor ingresa la información del siguiente formulario, todos los campos son obligatorios.</p>
+    <hr>
+    <h1>Formulario de prueba</h1>
+
+    <form class="tracing-form" [formGroup]="miFormulario" (ngSubmit)="enviar()">
+        <mat-form-field appearance="fill" class="field">
+            <mat-label>Nombre</mat-label>
+            <input matInput formControlName="name">
+        </mat-form-field>
+        <mat-form-field appearance="fill" class="field">
+            <mat-label>Correo electrónico</mat-label>
+            <input matInput formControlName="email">
+        </mat-form-field>
+        <mat-form-field appearance="fill" class="field">
+            <mat-label>Dirección</mat-label>
+            <input matInput formControlName="address">
+        </mat-form-field>
+        <mat-form-field appearance="fill" class="field">
+            <mat-label>Número de teléfono</mat-label>
+            <input matInput formControlName="phoneNumber">
+        </mat-form-field>
+        <mat-form-field appearance="fill" class="field">
+            <mat-label>Comentarios</mat-label>
+            <textarea matInput formControlName="comment"></textarea>
+        </mat-form-field>
+
+        <button type="submit"
+            mat-button
+            class="submit-btn"
+            [ngClass]="{'disabled': miFormulario.invalid}"
+            [disabled]="miFormulario.invalid">
+            Enviar
+            <mat-icon class="icon">send</mat-icon>
+        </button>
+    </form>
+</div>

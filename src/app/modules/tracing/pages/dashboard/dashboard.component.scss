@@ -1,0 +1,41 @@
+@import '../../../../../styles/medias.scss';
+
+.container {
+    padding: 16px;
+    .notification {
+        max-height: 35px;
+        padding: 6px 16px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: rgb(34, 192, 60);
+        border-radius: 15px;
+        @include md-screen() {
+            max-width: 60%;
+            margin: 16px auto;
+        }
+        p {
+            margin: 0px;
+            color: #fff;
+            font-weight: 500;
+        }
+    }
+    
+    .add {
+        width: 100%;
+        display: flex;
+        justify-content: right;
+        position: fixed;
+        bottom: 75px;
+        left: 0px;
+        @include md-screen() {
+            bottom: 0px;
+        }
+        .add-btn {
+            margin: 0px 16px;
+            @include md-screen() {
+                margin-bottom: 16px;
+            }
+        }
+    }
+}
